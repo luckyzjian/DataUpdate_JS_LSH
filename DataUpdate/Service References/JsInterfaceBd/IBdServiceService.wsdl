@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://synToCity.synchrodata.daniu.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="IBdServiceService" targetNamespace="http://synToCity.synchrodata.daniu.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://synToCity.synchrodata.daniu.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="UploadBDResult" type="tns:UploadBDResult" />
+      <xs:element name="UploadBDResultResponse" type="tns:UploadBDResultResponse" />
+      <xs:complexType name="UploadBDResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="checkresult" type="xs:string" />
+          <xs:element name="action" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UploadBDResultResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="UploadBDResultResponse">
+    <wsdl:part name="parameters" element="tns:UploadBDResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadBDResult">
+    <wsdl:part name="parameters" element="tns:UploadBDResult" />
+  </wsdl:message>
+  <wsdl:portType name="IBdService">
+    <wsdl:operation name="UploadBDResult">
+      <wsdl:input name="UploadBDResult" message="tns:UploadBDResult" />
+      <wsdl:output name="UploadBDResultResponse" message="tns:UploadBDResultResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IBdServiceServiceSoapBinding" type="tns:IBdService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadBDResult">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="UploadBDResult">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UploadBDResultResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IBdServiceService">
+    <wsdl:port name="IBdServicePort" binding="tns:IBdServiceServiceSoapBinding">
+      <soap:address location="http://47.114.113.127:8080/synchrodata/webservice/bd" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
