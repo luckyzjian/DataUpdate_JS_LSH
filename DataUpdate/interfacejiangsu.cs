@@ -109,7 +109,7 @@ namespace DataUpdate
                     {
                         DataRow dr = dt.NewRow();
                         dr["CLID"] =  node4.SelectSingleNode("VEHICLE_ID").InnerText;
-                        dr["jylsh"] = LSH;// node4.SelectSingleNode("VEHICLE_ID").InnerText;
+                        dr["jylsh"] = node4.SelectSingleNode("VEHICLE_ID").InnerText;// LSH;// node4.SelectSingleNode("VEHICLE_ID").InnerText;
                         dr["jycs"] = "1";// child1.insp.TestTimes;
                         dr["reallsh"] = LSH;//真实流水号
                         string Hphm = node4.SelectSingleNode("PLATE").InnerText;
@@ -160,7 +160,8 @@ namespace DataUpdate
                         dr["czmc"] = node4.SelectSingleNode("OWNER").InnerText;
                         dr["lxdh"] = node4.SelectSingleNode("PHONE").InnerText;
                         dr["lxdz"] = node4.SelectSingleNode("OWNERADDRESS").InnerText;
-                        dr["pfbz"] = "";
+                        string pfid = node4.SelectSingleNode("STANDARD_ID").InnerText;
+                        dr["pfbz"] = GetPfbz(pfid);
                         dr["bsqxs"] = GetBsxxs(node4.SelectSingleNode("DRIVE_FORM").InnerText);
                         dr["jqfs"] = ""; //node4.SelectSingleNode("ADDMISSION").InnerText;
 
@@ -2024,7 +2025,23 @@ namespace DataUpdate
             }
             return Bxsxs;
         }
-
+        //排放阶段
+        public string GetPfbz(string JiangSupfid)
+        {
+            string PFBZ = "";
+            switch (JiangSupfid)
+            {
+                case "0": PFBZ = "国0"; break;
+                case "1": PFBZ = "国I"; break;
+                case "2": PFBZ = "国II"; break;
+                case "3": PFBZ = "国III"; break;
+                case "4": PFBZ = "国IV"; break;
+                case "5": PFBZ = "国V"; break;
+                case "6": PFBZ = "国VI"; break;
+                default: PFBZ = JiangSupfid; break;
+            }
+            return PFBZ;
+        }
         /// <summary>
         /// 供油方式
         /// </summary>

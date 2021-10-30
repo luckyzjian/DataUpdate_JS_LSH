@@ -1106,7 +1106,7 @@ namespace DataUpdate
                                 break;
                                 */
                                 case "SDS":
-                                    if (tempZT == "1" || tempZT == "11" || tempZT == "12" || tempZT == "6")
+                                    if (tempZT == "1" || tempZT == "11" || tempZT == "12" || tempZT == "13" || tempZT == "14" || tempZT == "6")
                                     {
                                         if (SdsUploadThread != null && SdsUploadThread.IsAlive)
                                             continue;
@@ -1130,7 +1130,7 @@ namespace DataUpdate
                                     }
                                     break;
                                 case "JZJS":
-                                    if (tempZT == "1" || tempZT == "41" || tempZT == "42" || tempZT == "43" || tempZT == "6")
+                                    if (tempZT == "1" || tempZT == "41" || tempZT == "42" || tempZT == "43" || tempZT == "44" || tempZT == "6")
                                     {
                                         if (JzjsUploadThread != null && JzjsUploadThread.IsAlive)
                                             continue;
@@ -1142,7 +1142,7 @@ namespace DataUpdate
                                     }
                                     break;
                                 case "ZYJS":
-                                    if (tempZT == "1" || tempZT == "51" || tempZT == "52" || tempZT == "53" || tempZT == "6")
+                                    if (tempZT == "1" || tempZT == "51" || tempZT == "52" || tempZT == "53" || tempZT == "54" || tempZT == "6")
                                     {
                                         if (ZyjsUploadThread != null && ZyjsUploadThread.IsAlive)
                                             continue;
@@ -2461,9 +2461,11 @@ namespace DataUpdate
             JcZt.Add("41", "JZJS100Vel");
             JcZt.Add("42", "JZJS90Vel");
             JcZt.Add("43", "JZJS80Vel");
+            JcZt.Add("44", "JZJSend");
             JcZt.Add("51", "ZYJS第一次");
             JcZt.Add("52", "ZYJS第二次");
             JcZt.Add("53", "ZYJS第三次");
+            JcZt.Add("54", "ZYJS准备");
 
             Dic_ZJLX.Add("2", "加载滑行-汽油");
             Dic_ZJLX.Add("2cy", "加载滑行-柴油");
