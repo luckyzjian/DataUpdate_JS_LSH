@@ -1018,6 +1018,25 @@ namespace DataUpdate
                 return "";
             }
         }
+        public bool UpdateJCBGBH(string reallsh,string lsh, string jycs)
+        {
+            try
+            {
+                string sql = "update [已检车辆信息] set LSH='"+reallsh+"' where JYLSH='"+lsh + "' and JCCS='" + jycs + "'";
+                DataTable dt = DBHelperSQL.GetDataTable(sql, CommandType.Text);
+                if (dt.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+            catch (Exception er)
+            {
+                FileOpreate.SaveLog("更新["+lsh+"|"+jycs+"]报告单编号失败，原因：" + er.Message,"更新报告单编号失败",1);
+                return false;
+            }
+        }
 
 
         /// <summary>

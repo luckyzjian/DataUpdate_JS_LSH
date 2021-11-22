@@ -1313,6 +1313,7 @@ namespace DataUpdate
                                 dt_AlreadyUpload.Rows.Add(dr);
                                 carinfobd.DeleteCarTestStatus(jylsh, jycs);
                                 carinfobd.deleteCarInWaitlist(jylsh, jycs);
+                                carinfobd.UpdateJCBGBH(realjylsh, jylsh, jycs);
                             }
                             else
                             {
@@ -1626,6 +1627,7 @@ namespace DataUpdate
                                 FileOpreate.SaveLog("流水号：" + jylsh + "所有数据上传完毕", "SDS上传过程", 1);
                                 carinfobd.DeleteCarTestStatus(jylsh, jycs);
                                 carinfobd.deleteCarInWaitlist(jylsh, jycs);
+                                carinfobd.UpdateJCBGBH(realjylsh, jylsh, jycs);
                             }
                             else
                             {
@@ -1769,6 +1771,7 @@ namespace DataUpdate
                                 FileOpreate.SaveLog("流水号：" + jylsh + "所有数据上传完毕", "SDSM上传过程", 1);
                                 carinfobd.DeleteCarTestStatus(jylsh, jycs);
                                 carinfobd.deleteCarInWaitlist(jylsh, jycs);
+                                carinfobd.UpdateJCBGBH(realjylsh, jylsh, jycs);
                             }
                             else
                             {
@@ -1945,6 +1948,7 @@ namespace DataUpdate
                                 dt_AlreadyUpload.Rows.Add(dr);
                                 carinfobd.DeleteCarTestStatus(jylsh, jycs);
                                 carinfobd.deleteCarInWaitlist(jylsh, jycs);
+                                carinfobd.UpdateJCBGBH(realjylsh, jylsh, jycs);
                             }
                             else
                             {
@@ -2120,6 +2124,7 @@ namespace DataUpdate
                                 dt_AlreadyUpload.Rows.Add(dr);
                                 carinfobd.DeleteCarTestStatus(jylsh, jycs);
                                 carinfobd.deleteCarInWaitlist(jylsh, jycs);
+                                carinfobd.UpdateJCBGBH(realjylsh, jylsh, jycs);
                             }
                             else
                             {
